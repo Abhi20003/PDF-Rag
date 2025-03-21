@@ -7,21 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
         loadingPopup.style.display = "none";
     }
 
-    // Load details if available
-    let storedDetails = localStorage.getItem("pdfDetails");
-    if (storedDetails) {
-        const detailsContent = document.getElementById("detailsContent");
-        if (detailsContent) {
-            detailsContent.innerText = storedDetails;
-        }
-        
-        // Show details tab
-        const detailsTab = document.getElementById("details-tab");
-        if (detailsTab) {
-            detailsTab.style.display = "block";
-        }
-    }
-
     // Load stored PDF summaries from backend
     fetch(`${serverUrl}/get-all-summaries`)
         .then(response => {
