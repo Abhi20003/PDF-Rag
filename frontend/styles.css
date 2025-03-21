@@ -1,0 +1,98 @@
+body {
+    display: flex;
+    font-family: Arial, sans-serif;
+    min-height: 100vh; /* Ensure full height */
+    margin: 0;
+}
+
+.sidebar {
+    width: 200px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.sidebar a {
+    display: block;
+    margin: 10px 0;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+@keyframes blinkDots {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+.dots::after {
+    content: "...";
+    display: inline-block;
+    animation: blinkDots 1.5s infinite;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    margin-left: 220px; /* Offset for fixed sidebar */
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#chatbox {
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+    background: #f9f9f9;
+    text-align: left;
+    border-radius: 5px;
+}
+
+/* Loader - Centered and Animated */
+#loadingPopup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Spinning Animation */
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db; 
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 10px auto;
+}
+
+/* Spinner Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+.user { color: blue; font-weight: bold; }
+.model { color: green; font-weight: bold; }

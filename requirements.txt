@@ -1,0 +1,14 @@
+langchain 
+sentence-transformers 
+chromadb
+PyPDF2 
+langchain-community 
+langchain-openai
+fastapi
+uvicorn
+python-multipart
+groq
+textblob
+scikit-learn
+numpy
+langchain-huggingface
