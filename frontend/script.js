@@ -43,6 +43,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 100);
 });
 
+function stripSpecialChars(str) {
+    return str.replace(/[^a-zA-Z0-9]/g, '');
+}
+
 function showLoading() {
     let loadingPopup = document.getElementById("loadingPopup");
     if (loadingPopup) {
@@ -87,7 +91,7 @@ function uploadFiles() {
             setTimeout(() => { uploadStatus.innerText = ""; }, 10000);
 
             if (body.summary) {
-                let pdfName = file.name;
+                let pdfName = stripSpecialChars(file.name);
 
                 // Store the summary in the backend
                 fetch(`${serverUrl}/store-summary`, {
